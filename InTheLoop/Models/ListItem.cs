@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace InTheLoop.Models
 {
+    public enum Urgency
+    { 
+        High,
+        Moderate,
+        Normal,
+        Low,
+        Lowest
+    }
+
     /// <summary>
     /// The ListItem class represents the properties needed to add a ListItem to a list.
     /// </summary>
@@ -37,10 +46,10 @@ namespace InTheLoop.Models
 
         /// <summary>
         /// ListItemUrgency will use a bite value to correlate with a dropdown list
-        /// on the website to store values of urgency with 0 being the least urgent
-        /// and 4 being the most urgent.
+        /// on the website to store values of urgency with 0 being the most urgent
+        /// and 4 being the least urgent.
         /// </summary>
-        public byte ListItemUrgency { get; set; }
+        public Urgency ListItemUrgency { get; set; }
 
         /// <summary>
         /// ListItemChecked will return true or false for whether or not the 
