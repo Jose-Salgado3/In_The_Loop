@@ -18,18 +18,21 @@ namespace InTheLoop.Models
         /// individual relationship that is stored in the database. Each 
         /// FriendAssociation call will only compare two users at a time.
         /// </summary>
+        [Key]
         public int FriendsAssociationId { get; set; }
 
         /// <summary>
         /// UserId will represent the first user that is being examined in the 
         /// FriendsAssociation table.
         /// </summary>
+        [Required]
         public int Id { get; set; }
 
         /// <summary>
         /// FriendId will the UserId of the second user that is being examined in 
         /// the FriendsAssociation table.
         /// </summary>
+        [Required]
         public int User2Id { get; set; }
 
         /// <summary>
@@ -40,6 +43,7 @@ namespace InTheLoop.Models
         /// 2 - represents that a user is blocked by the other user
         /// 3 - represents that the user recieving the request has declined being friends.
         /// </summary>
+        
         public byte FriendsAssociationStatus { get; set; }
 
         /// <summary>
