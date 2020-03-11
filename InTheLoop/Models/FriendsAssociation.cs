@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace InTheLoop.Models
 {
+    /// <summary>
+    /// The FriendsAssociation class will create a table that accepts two user ids and will
+    /// return things like stautus ( pending, accepted, declined, blocked) or even to users 
+    /// look at a friends list of themselves or another user.
+    /// </summary>
     public class FriendsAssociation
     {
         /// <summary>
