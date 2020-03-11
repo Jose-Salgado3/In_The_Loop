@@ -19,7 +19,7 @@ namespace InTheLoop.Models
         /// UserId will represent the first user that is being examined in the 
         /// FriendsAssociation table.
         /// </summary>
-        public int User1Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// FriendId will the UserId of the second user that is being examined in 
