@@ -44,6 +44,7 @@ namespace InTheLoop.Models
         /// 3 - represents that the user recieving the request has declined being friends.
         /// </summary>
         
+        [Required]
         public byte FriendsAssociationStatus { get; set; }
 
         /// <summary>
