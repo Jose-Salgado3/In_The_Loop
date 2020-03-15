@@ -26,14 +26,14 @@ namespace InTheLoop.Models
         /// FriendsAssociation table.
         /// </summary>
         [Required]
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         /// <summary>
         /// FriendId will the UserId of the second user that is being examined in 
         /// the FriendsAssociation table.
         /// </summary>
         [Required]
-        public int User2Id { get; set; }
+        public int FriendId { get; set; }
 
         /// <summary>
         /// FriendsAssociationStatus is responsible for storing a variable 0 - 4 representing
