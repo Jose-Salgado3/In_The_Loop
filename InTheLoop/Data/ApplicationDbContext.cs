@@ -1,4 +1,5 @@
 ﻿using System;
+using InTheLoop.Models;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,5 +13,10 @@ namespace InTheLoop.Data
             : base(options)
         {
         }
+
+        /// <summary>
+        /// Add a aDbSet for the FreindsAssociation Table in the Database]]>
+        /// </summary>
+        public DbSet<FriendsAssociation> FriendsAssociation { get; set; }
     }
 }
