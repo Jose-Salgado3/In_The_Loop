@@ -16,5 +16,7 @@ namespace InTheLoop.Data
         
         // Adds a DbSet for the ListAssociations table.
         public DbSet<ListAssociation> ListAssociations { get; set; }
+
+        public DbSet<FriendsAssociation> FriendsAssociations { get; set; }
     }
 }
