@@ -18,6 +18,7 @@ namespace InTheLoop.Models
         /// property stores a reference of a List to User relationship.
         /// </summary>
         [Required]
+        [Key]
         public int ListAssociationId { get; set; }
 
         /// <summary>
