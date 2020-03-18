@@ -30,7 +30,7 @@ namespace InTheLoop.Models
         /// The Users Id that is being checked in reference to the list
         /// </summary>
         [Required]
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
         /// <summary>
         /// Using a value between 0 and 2 we can reference whether or not the user
