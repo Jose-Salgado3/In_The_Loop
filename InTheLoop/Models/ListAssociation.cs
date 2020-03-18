@@ -42,5 +42,15 @@ namespace InTheLoop.Models
         /// </summary>
         [Required]
         public byte ListAssociationStatus { get; set; }
+
+        /// <summary>
+        /// ListAssociationActionStatus will show the UserId of the last person to interact with
+        /// the invitation to a list. IE if someone invites someone else to a list the person who invited
+        /// the other user will have their Id displayed. When that person responds to that invitation then it
+        /// will show the user who responded. Whoever is last to interact. I am not sure if this property is
+        /// completely neccessary but if not it will not affect functionality of the DB.
+        /// </summary>
+        [Required]
+        public int ListAssociationActionStatus { get; set; }
     }
 }
