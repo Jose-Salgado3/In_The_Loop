@@ -53,6 +53,7 @@ namespace InTheLoop.Models
             /// in the friend requesting process with another user. If User1 sent a request t User2
             /// and User2 has not responded then this property would be User1's UserId.
             /// </summary>
+            [Required]
             public int FriendsAssociationActionStatus { get; set; }
         }
 }
