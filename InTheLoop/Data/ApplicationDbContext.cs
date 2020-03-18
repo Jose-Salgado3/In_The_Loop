@@ -1,4 +1,5 @@
 ﻿using System;
+using InTheLoop.Models;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,5 +13,8 @@ namespace InTheLoop.Data
             : base(options)
         {
         }
+        
+        // Adds a DbSet for the ListAssociations table.
+        public DbSet<ListAssociation> ListAssociations { get; set; }
     }
 }
