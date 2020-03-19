@@ -81,9 +81,11 @@ namespace InTheLoop.Controllers
         }
 
         // GET: List/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            List list = await ListsDb.GetListById(id, _context);
+
+            return View(list);
         }
 
         // POST: List/Delete/5
