@@ -58,8 +58,10 @@ namespace InTheLoop.Controllers
         }
 
         // GET: List/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
+            //Grab single list 
+            List list = await ListsDb.GetListByListId(id, _context);
             return View();
         }
 
