@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InTheLoop.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using InTheLoop.Models;
 
 namespace InTheLoop.Data
 {
-    public class ListsDb
+    public static class ListsDb
     {
 
         /// <summary>
@@ -20,6 +21,14 @@ namespace InTheLoop.Data
         {
             context.Add(l);
             await context.SaveChangesAsync();
+            return l;
+        }
+
+        public static async Task<List> GetListById(int id, ApplicationDbContext context)
+        {
+            List l = await (from list in context.Lists
+                            where list.ListId == id
+                            select list).SingleOrDefaultAsync();
             return l;
         }
 
