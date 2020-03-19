@@ -40,11 +40,11 @@ namespace InTheLoop.Controllers
         // POST: List/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(List l)
         {
             try
             {
-                // TODO: Add insert logic here
+                await ListsDb.Add(l, _context);
 
                 return RedirectToAction(nameof(Index));
             }
