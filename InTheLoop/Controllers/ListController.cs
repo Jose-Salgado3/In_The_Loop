@@ -47,16 +47,14 @@ namespace InTheLoop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(List l)
         {
-            try
+            if (ModelState.IsValid)
             {
+                //Add to the db
                 await ListsDb.Add(l, _context);
-
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            // Return view with model and error
+            return View(l);
         }
 
         // GET: List/Edit/5
