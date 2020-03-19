@@ -23,7 +23,7 @@ namespace InTheLoop.Data
         //DbSet for List table to be added.
         public DbSet<List> Lists { get; set; }
 
-
+        //DbSet for ListItem table to be added.
         public DbSet<ListItem> ListItems { get; set; }
     }
 }
