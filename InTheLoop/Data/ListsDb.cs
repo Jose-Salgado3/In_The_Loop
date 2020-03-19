@@ -24,6 +24,12 @@ namespace InTheLoop.Data
             return l;
         }
 
+        /// <summary>
+        /// Retrieves a single list by finding the list with the given ListId
+        /// </summary>
+        /// <param name="id">The ListId of the list being retrieved</param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<List> GetListById(int id, ApplicationDbContext context)
         {
             List l = await (from list in context.Lists
