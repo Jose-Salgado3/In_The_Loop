@@ -68,18 +68,16 @@ namespace InTheLoop.Controllers
         // POST: List/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Update(List l)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                //update list
+                await ListsDb.UpdateList(l, _context);
+            }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //show user form with errors
+            return View(l);
         }
 
         // GET: List/Delete/5
