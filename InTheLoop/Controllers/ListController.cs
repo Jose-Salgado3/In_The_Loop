@@ -38,6 +38,11 @@ namespace InTheLoop.Controllers
         }
 
         // POST: List/Create
+        /// <summary>
+        /// Adds a List to the database and sets the ListId value(PK)
+        /// </summary>
+        /// <param name="l">The list being reffered to</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(List l)
