@@ -1,4 +1,6 @@
 ﻿using System;
+using InTheLoop.Data;
+using InTheLoop.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +11,14 @@ namespace InTheLoop.Controllers
 {
     public class ListController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        //Passes DbContext to controller with constructor
+        public ListController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         // GET: List
         public ActionResult Index()
         {
