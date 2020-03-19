@@ -40,7 +40,7 @@ namespace InTheLoop.Controllers
         // POST: List/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(List l)
+        public async Task<IActionResult> Add(List l)
         {
             try
             {
