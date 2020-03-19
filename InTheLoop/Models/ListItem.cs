@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace InTheLoop.Models
 {
+    /// <summary>
+    /// Enum Urgency used to store the values of the 'Urgency' property. 
+    /// The Enum will be represented by a drop down menu referencing integers.
+    /// </summary>
     public enum Urgency
     {
         High,
