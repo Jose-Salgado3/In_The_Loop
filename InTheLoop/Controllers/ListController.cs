@@ -38,49 +38,54 @@ namespace InTheLoop.Controllers
         }
 
         // POST: List/Create
+        /// <summary>
+        /// Adds a List to the database and sets the ListId value(PK)
+        /// </summary>
+        /// <param name="l">The list being reffered to</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Add(List l)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
+                //Add to the db
+                await ListsDb.Add(l, _context);
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            // Return view with model and error
+            return View(l);
         }
 
         // GET: List/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
+            //Grab single list 
+            List list = await ListsDb.GetListByListId(id, _context);
             return View();
         }
 
         // POST: List/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Update(List l)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                //update list
+                await ListsDb.UpdateList(l, _context);
+            }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //show user form with errors
+            return View(l);
         }
 
         // GET: List/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            List list = await ListsDb.GetListById(id, _context);
+
+            return View(list);
         }
 
         // POST: List/Delete/5
