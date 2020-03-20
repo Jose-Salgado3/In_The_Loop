@@ -55,5 +55,21 @@ namespace InTheLoop.Data
             context.Entry(l).State = EntityState.Deleted;
             await context.SaveChangesAsync();
         }
+
+        /// <summary>
+        /// Updates a specific list and returns the new version of the list.
+        /// </summary>
+        /// <param name="l">The list to be updated</param>
+        /// <param name="context">The database context</param>
+        /// <returns></returns>
+        public static async Task<List> UpdateList(List l, ApplicationDbContext context)
+        {
+            //Starts tracking to get update
+            context.Update(l);
+
+            await context.SaveChangesAsync();
+            
+            return l;
+        }
     }
 }
