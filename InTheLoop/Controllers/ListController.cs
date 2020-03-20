@@ -61,7 +61,7 @@ namespace InTheLoop.Controllers
         public async Task<ActionResult> Edit(int id)
         {
             //Grab single list 
-            List list = await ListsDb.GetListByListId(id, _context);
+            List list = await ListsDb.GetByListId(id, _context);
             return View();
         }
 
@@ -83,7 +83,7 @@ namespace InTheLoop.Controllers
         // GET: List/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            List list = await ListsDb.GetListById(id, _context);
+            List list = await ListsDb.GetByListId(id, _context);
 
             return View(list);
         }
