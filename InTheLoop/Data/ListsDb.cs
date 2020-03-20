@@ -30,7 +30,7 @@ namespace InTheLoop.Data
         /// <param name="id">The ListId of the list being retrieved</param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public static async Task<List> GetListById(int id, ApplicationDbContext context)
+        public static async Task<List> GetByListId(int id, ApplicationDbContext context)
         {
             List l = await (from list in context.Lists
                             where list.ListId == id
