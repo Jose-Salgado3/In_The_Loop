@@ -32,7 +32,7 @@ namespace InTheLoop.Controllers
         }
 
         // GET: List/Create
-        public ActionResult Create()
+        public ActionResult Add()
         {
             return View();
         }
