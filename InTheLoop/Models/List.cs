@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InTheLoop.Models
 {
@@ -32,7 +33,7 @@ namespace InTheLoop.Models
         /// <summary>
         /// The date and time that the specific list was created
         /// </summary>
-        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime DateCreated { get; set; }
 
         /// <summary>
