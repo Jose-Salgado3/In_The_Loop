@@ -31,11 +31,19 @@ namespace InTheLoop.Models
         public string ListTitle { get; set; }
 
         /// <summary>
-        /// The date and time that the specific list was created
+        /// Private Nullable datetime helper for the DateCreated Property
         /// </summary>
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime DateCreated { get; set; }
+        private DateTime? dateCreated;
 
+        /// <summary>
+        /// The DateCreated uses helper method above to set DateCreated to the datetime.now
+        /// that the file was added to the database.
+        /// </summary>
+        public DateTime DateCreated
+        { 
+            get{ return dateCreated ?? DateTime.Now; } 
+            set{ dateCreated = value; }
+        }
         /// <summary>
         /// The date and time the list is due or time is up to complete the list.
         /// </summary>
