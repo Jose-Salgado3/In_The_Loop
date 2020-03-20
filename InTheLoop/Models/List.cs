@@ -12,7 +12,7 @@ namespace InTheLoop.Models
         /// <summary>
         /// The auto-generated Id for the list being used or created
         /// </summary>
-        [Required]
+
         [Key]
         public int ListId { get; set; }
 
