@@ -17,20 +17,19 @@ namespace InTheLoop.Models
         /// The auto generated int that also serves as the Primary Key of this class. This
         /// property stores a reference of a List to User relationship.
         /// </summary>
-        [Required]
         [Key]
         public int ListAssociationId { get; set; }
 
         /// <summary>
         /// The Id of the list that you will be referenceing through this data table.
         /// </summary>
-        [Required]
+        /// 
         public int ListId { get; set; }
 
         /// <summary>
         /// The Users Id that is being checked in reference to the list
         /// </summary>
-        [Required]
+
         public int UserId { get; set; }
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace InTheLoop.Models
         /// 1 - Accepted(part of the list)
         /// 2 - Denied ( rejected the invite to the list)
         /// </summary>
-        [Required]
+
         public byte ListAssociationStatus { get; set; }
 
         /// <summary>
@@ -51,7 +50,7 @@ namespace InTheLoop.Models
         /// will show the user who responded. Whoever is last to interact. I am not sure if this property is
         /// completely neccessary but if not it will not affect functionality of the DB.
         /// </summary>
-        [Required]
+
         public int ListAssociationActionStatus { get; set; }
     }
 }
