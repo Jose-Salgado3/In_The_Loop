@@ -72,8 +72,6 @@ namespace InTheLoop.Models
         [StringLength(256)]
         public string ListItemDescription { get; set; }
 
-
-
         /// <summary>
         /// Private Nullable datetime helper for the ListItemDate Property
         /// </summary>
