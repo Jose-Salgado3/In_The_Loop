@@ -29,20 +29,18 @@ namespace InTheLoop.Models
         /// ListItemId will be the auto generated Id that will be used to reference a single
         /// list.
         /// </summary>
-        [Required]
+
         public int ListItemId { get; set; }
 
         /// <summary>
         /// ListId is the Id of the list that the ListItem is being added to.
         /// </summary>
-        [Required]
         public int ListId { get; set; }
 
         /// <summary>
         /// ListItemCreatorId will store the UserId of the User that is adding the ListItem
         /// to the list. This will allow us to keep truck of who added what.
         /// </summary>
-        [Required]
         public int ListItemCreatorId { get; set; }
 
         /// <summary>
@@ -74,11 +72,21 @@ namespace InTheLoop.Models
         [StringLength(256)]
         public string ListItemDescription { get; set; }
 
+
+
+        /// <summary>
+        /// Private Nullable datetime helper for the ListItemDate Property
+        /// </summary>
+        private DateTime? listItemAddDate;
+
         /// <summary>
         /// ListItemAddDate will store a date time value for when the ListItem
         /// was added to the list.
         /// </summary>
-        [Required]
-        public DateTime ListItemAddDate { get; set; }
+        public DateTime ListItemAddDate
+        {
+            get { return listItemAddDate ?? DateTime.Now; }
+            set { listItemAddDate = value; }
+        }
     }
 }
