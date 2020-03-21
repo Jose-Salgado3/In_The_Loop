@@ -26,14 +26,13 @@ namespace InTheLoop.Models
             /// UserId will represent the first user that is being examined in the 
             /// FriendsAssociation table.
             /// </summary>
-            [Required]
+            /// 
             public int UserId { get; set; }
 
             /// <summary>
             /// FriendId will the UserId of the second user that is being examined in 
             /// the FriendsAssociation table.
             /// </summary>
-            [Required]
             public int FriendId { get; set; }
 
             /// <summary>
@@ -45,7 +44,6 @@ namespace InTheLoop.Models
             /// 3 - represents that the user recieving the request has declined being friends.
             /// </summary>
 
-            [Required]
             public byte FriendsAssociationStatus { get; set; }
 
             /// <summary>
@@ -53,7 +51,7 @@ namespace InTheLoop.Models
             /// in the friend requesting process with another user. If User1 sent a request t User2
             /// and User2 has not responded then this property would be User1's UserId.
             /// </summary>
-            [Required]
+            
             public int FriendsAssociationActionStatus { get; set; }
         }
 }
