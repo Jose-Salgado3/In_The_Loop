@@ -20,7 +20,7 @@ namespace InTheLoop.Models
         /// <summary>
         /// The Id(User) for the User that created the list
         /// </summary>
-        [Required]
+        
         public int ListCreatorId { get; set; }
 
         /// <summary>
